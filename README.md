@@ -20,3 +20,6 @@ Este proyecto está dividido en 3 cuadernillos:
 * Las noticias de 1. Mundo es posible reclasificarlas si asumimos que dentro de mundo pueden haber noticias de Salud, Politica, Conflictos, etc. quiźas utiliando esas noticas podríamos disminuir el posible sesgo que tenga nuestro dataset debido a la diversidad de noticias que podria abarcar mundo.
 
 
+# Link dataset:
+
+* https://drive.google.com/file/d/1DdCCxYTvKl249F6SL6XR1bFc09Z_ll7q/view?usp=sharing
