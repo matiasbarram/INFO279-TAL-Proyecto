@@ -9,12 +9,14 @@
 Este proyecto está dividido en 3 cuadernillos:
 
 1. **Paso_1_extracion_por_url_y_lda**: Clasificación de noticias por su URL y LDA
-    * Clasificación inicial mediante la url y categoria que proveen los propios medios de prensa y luego aplicación de LDA para categorizar noticias que no fue posibles categorizarlas con el metodo anterior.
+    * Clasificación inicial mediante la url y categoría que proveen los propios medios de prensa y luego aplicación de LDA para categorizar noticias que no fue posibles categorizarlas con el metodo anterior.
 
-2. **paso_2_re_extraccion_lda**: Re-clasificación de topicos.
-    * Para poder mejorar la eleccion de categoria, se realizó un segundo LDA con la intención poder clasificar de mejor manera algunos topicos que no eran clasificables en primera instancia.
+2. **paso_2_re_extraccion_lda**: Re-clasificación de tópicos.
+    * Para poder mejorar la elección de categoría, se realizó un segundo LDA con la intención poder clasificar de mejor manera algunos tópicos que no eran clasificables en primera instancia.
 
 3. **paso_3_unir_dataframes**: Se unen las nuevas clasificaciones al dataset final
+
+El trabajo realizado con LDA se basa en el material que se encuentra en el repositorio https://github.com/matthieuvernier/INFO279_2021
 
 
 # Conclusiones: 
