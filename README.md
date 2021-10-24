@@ -18,7 +18,7 @@ Este proyecto está dividido en 3 cuadernillos:
 
 
 # Conclusiones: 
-* Estamos satisfechos con el resultado, pero es posible mejorar nuestro dataset inicial, podriamos realizar más LDA para clasificar de mejor manera las noticias.
+*  La estrategia adoptada entrega etiquetas correctas para una buena parte de las noticias, pero, al no tratarse de una revisión exhaustiva hecha por personas, algunas noticias no se encuentran correctamente etiquetadas, cosa que queda en evidencia al mostrar el contenido y la categoría de ciertos dataframes en los cuadernillos. En general, estamos satisfechos con el dataset inicial resultante, pero sin lugar a dudas es algo mejorable como por ejemplo a través de un uso más fino de LDA para disminuir el número de noticias mal etiquetadas, y para suplir de más material a las categorías menos numerosas.
 * Las noticias de 1. Mundo es posible reclasificarlas si asumimos que dentro de mundo pueden haber noticias de Salud, Politica, Conflictos, etc. quiźas utiliando esas noticas podríamos disminuir el posible sesgo que tenga nuestro dataset debido a la diversidad de noticias que podria abarcar mundo.
 
 
