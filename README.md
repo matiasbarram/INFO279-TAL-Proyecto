@@ -2,7 +2,7 @@
 
 - 1- Mundo, 2- Economía, 3- Política y Conflictos, 4- Ciencias y Tecnología, 5- Catástrofes y Accidentes, 6- Cultura y Artes, 7- Deporte, 8- Ecología y Planeta, 9- Crimen, delitos y Justicia, 10- Salud
 
-Hito Unidad 1: Datasets de entrenamiento y test + primer modelo baseline
+# Información importante
 
 Este proyecto está dividido en 3 cuadernillos:
 
