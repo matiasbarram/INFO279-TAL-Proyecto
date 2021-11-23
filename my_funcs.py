@@ -1,5 +1,8 @@
 import re
 import pandas as pd
+from sklearn.metrics import plot_confusion_matrix, classification_report
+from functools import partial
+import matplotlib.pyplot as plt
 
 def get_tag(row):
     if row.media_outlet == 'emol':
@@ -44,7 +47,7 @@ def predict_and_compare(df, vectorized_df, idxs=(0, 6)):
         print(f'prob: {probs[pred]:.3f}')
         print('*'*60)
         
-def results(ylb, text_clf, X_test):
+def results(ylb, text_clf, X_test, true_labels):
     predicted = text_clf.predict(X_test)
     clf_name = type(text_clf).__name__
     print(f"Resultados clasificación\n{clf_name}\n\n")
