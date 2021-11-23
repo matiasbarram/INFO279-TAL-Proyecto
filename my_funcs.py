@@ -31,3 +31,29 @@ def get_df_keywords(lda_model, num_topics=None):
         words = re.findall( r'"(.*?)"', topic[1])
         topicos.update({topic[0]: words})
     return pd.DataFrame.from_dict(topicos)
+
+def predict_and_compare(df, vectorized_df, idxs=(0, 6)):
+    predictions = lgr.predict(vectorized_df[idxs[0]:idxs[1]])
+    predict_probs = lgr.predict_proba(vectorized_df[idxs[0]:idxs[1]])
+    for i, (pred, probs) in enumerate(zip(predictions, predict_probs)):
+        print('\n', df.iloc[i+idxs[0]].url)
+        print()
+        print(df.iloc[i+idxs[0]].text[:200], '...')
+        print()
+        print(f'predicted ---{lb.inverse_transform([pred])[0]}---', end=' ')
+        print(f'prob: {probs[pred]:.3f}')
+        print('*'*60)
+        
+def results(ylb, text_clf, X_test):
+    predicted = text_clf.predict(X_test)
+    clf_name = type(text_clf).__name__
+    print(f"Resultados clasificación\n{clf_name}\n\n")
+    print(classification_report(ylb, predicted, target_names=true_labels))
+    fig, ax = plt.subplots(figsize=(7, 7), tight_layout=True)
+    plot_confusion_matrix(text_clf, X_test, ylb,
+                          display_labels=true_labels,
+                          ax=ax,
+                          cmap='Blues')
+    ax.set_title(f"Matriz de Confusión\n{clf_name}")
+    plt.xticks(rotation=60)
+    plt.show()
