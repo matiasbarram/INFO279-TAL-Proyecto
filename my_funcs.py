@@ -21,7 +21,9 @@ def clean_and_tag(df):
     df = df[df.text.str.len() > 100]
     return df
 
-def get_df_keywords(lda_model, num_topics):
+def get_df_keywords(lda_model, num_topics=None):
+    if num_topics is None:
+        num_topics = len(lda_model.get_topics())
     model_topics = lda_model.show_topics(num_topics, formatted=True, num_words=25)
     #print(model_topics[0][1])
     topicos = {}
