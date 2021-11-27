@@ -1,2 +1,10 @@
 
 noticias/
+img/
+.ipynb_checkpoints/
+*.pt
+CNN*
+glove*
+__pycache__/
+dataset_paso_3.csv
+
