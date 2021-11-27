@@ -3,6 +3,22 @@ import pandas as pd
 from sklearn.metrics import plot_confusion_matrix, classification_report
 from functools import partial
 import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_confusion_matrix(cm, labels, cmap=plt.cm.Blues):
+    fig, ax = plt.subplots(figsize=(7, 7), tight_layout=True)
+    ax.imshow(cm, interpolation='nearest', cmap=cmap)
+    for i in range(cm.shape[1]):
+        for j in range(cm.shape[0]):
+            ax.text(j, i, "{:,}".format(cm[i, j]), 
+                    horizontalalignment="center", verticalalignment="center",
+                    color="white" if cm[i, j] > np.amax(cm)/2 else "black")
+    ax.set_title("Matriz de confusión")
+    tick_marks = np.arange(len(labels))
+    plt.yticks(tick_marks, labels)
+    plt.xticks(tick_marks, labels, rotation=90)
+    plt.ylabel('Etiqueta real')
+    plt.xlabel('Predicción')
 
 def get_tag(row):
     if row.media_outlet == 'emol':
