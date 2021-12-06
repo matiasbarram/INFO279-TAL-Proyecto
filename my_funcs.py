@@ -1,11 +1,12 @@
 import re
 import pandas as pd
-from sklearn.metrics import plot_confusion_matrix, classification_report
+from sklearn.metrics import classification_report, confusion_matrix
 from functools import partial
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_confusion_matrix(cm, labels, cmap=plt.cm.Blues):
+
+def plot_confusion_matrix(cm, labels, cmap=plt.cm.Blues, clf_name=''):
     fig, ax = plt.subplots(figsize=(7, 7), tight_layout=True)
     ax.imshow(cm, interpolation='nearest', cmap=cmap)
     for i in range(cm.shape[1]):
@@ -13,7 +14,7 @@ def plot_confusion_matrix(cm, labels, cmap=plt.cm.Blues):
             ax.text(j, i, "{:,}".format(cm[i, j]), 
                     horizontalalignment="center", verticalalignment="center",
                     color="white" if cm[i, j] > np.amax(cm)/2 else "black")
-    ax.set_title("Matriz de confusión")
+    ax.set_title(f"Matriz de confusión {clf_name}")
     tick_marks = np.arange(len(labels))
     plt.yticks(tick_marks, labels)
     plt.xticks(tick_marks, labels, rotation=90)
@@ -68,11 +69,5 @@ def results(ylb, text_clf, X_test, true_labels):
     clf_name = type(text_clf).__name__
     print(f"Resultados clasificación\n{clf_name}\n\n")
     print(classification_report(ylb, predicted, target_names=true_labels))
-    fig, ax = plt.subplots(figsize=(7, 7), tight_layout=True)
-    plot_confusion_matrix(text_clf, X_test, ylb,
-                          display_labels=true_labels,
-                          ax=ax,
-                          cmap='Blues')
-    ax.set_title(f"Matriz de Confusión\n{clf_name}")
-    plt.xticks(rotation=60)
-    plt.show()
+    cm = confusion_matrix(y_true=ylb, y_pred=predicted)
+    plot_confusion_matrix(cm, labels=true_labels, clf_name=clf_name)
