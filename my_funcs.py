@@ -4,6 +4,28 @@ from sklearn.metrics import classification_report, confusion_matrix
 from functools import partial
 import matplotlib.pyplot as plt
 import numpy as np
+import string
+import spacy
+from spacy.lang.es.stop_words import STOP_WORDS
+import re
+
+prefix_re = re.compile('''^\$[a-zA-Z0-9]''')
+spacy_es = spacy.load('es_core_news_md')
+
+
+def tokenize_es_a(sentence):
+    return [tok.lower_ for tok in spacy_es.tokenizer(sentence)]
+
+def tokenize_es_b(sentence):
+    return list(filter(lambda x: x not in string.punctuation,
+                       [tok.lower_ for tok in spacy_es.tokenizer(sentence)]))
+
+def tokenize_es_c(sentence):
+    return list(filter(lambda x: x not in string.punctuation and x not in STOP_WORDS,
+                       [tok.lower_ for tok in spacy_es.tokenizer(sentence)]))
+
+def tokenize_es_d(sentence):
+    return [tok.text for tok in spacy_es.tokenizer(sentence)]
 
 
 def plot_confusion_matrix(cm, labels, cmap=plt.cm.Blues, clf_name=''):
