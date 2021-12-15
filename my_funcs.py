@@ -27,6 +27,10 @@ def tokenize_es_c(sentence):
 def tokenize_es_d(sentence):
     return [tok.text for tok in spacy_es.tokenizer(sentence)]
 
+def tokenize_es_string(sentence):
+    return " ".join(list(filter(lambda x: x not in string.punctuation and x not in STOP_WORDS,
+                       [tok.lower_ for tok in spacy_es.tokenizer(sentence)])))
+
 
 def plot_confusion_matrix(cm, labels, cmap=plt.cm.Blues, clf_name=''):
     fig, ax = plt.subplots(figsize=(7, 7), tight_layout=True)
