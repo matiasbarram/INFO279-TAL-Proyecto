@@ -12,7 +12,7 @@ Para poder entrenar el modelo, se realizaron 6 pasos, donde los primeros 2 se ma
 **Pasos:**
 
 
-3: **Scrapping**
+3. **Scrapping**
 Para poder aumentar el volumen de noticias, se decidió utilizar la tecnica vista en clases de *scrapping*. Se scrappearon noticias del medio de prensa CNN para las categorias de cultura, ecologia y planeta, catastrofe y accidentes, creando un dataset de noticias distinto para cada categoria. 
 
 4. **Unir dataframe**
