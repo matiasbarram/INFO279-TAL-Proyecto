@@ -12,10 +12,13 @@ Para poder entrenar el modelo, se realizaron 6 pasos, donde los primeros 2 se ma
 **Pasos:**
 
 
+
 3. **Scrapping**
+
 Para poder aumentar el volumen de noticias, se decidió utilizar la tecnica vista en clases de *scrapping*. Se scrappearon noticias del medio de prensa CNN para las categorias de cultura, ecologia y planeta, catastrofe y accidentes, creando un dataset de noticias distinto para cada categoria. 
 
 4. **Unir dataframe**
+
 Se juntaron los dataset generados en el paso **3** con nuestro dataset final, aumentando nuestra cantidad de noticias para entrenar.
 
 
@@ -32,7 +35,7 @@ Estos modelos fueron entrenados sin ajuste de parametros, con la intención de c
 
 Este es el pasó con más trabajo, donde se fueron probando distintos parametros para poder mejorar el acc y disminuir la loss del modelo. en la parte final hay una tabla resumen con los distintos modelos generados y sus distintos valores.
 
-Algunos de los parametros que se fueron ajustando son, epocas, loss, batch size, etc.
+Algunos de los parametros que se fueron ajustando son, maximo de epocas, largo maximo de las noticias, tokenizador utilizado y dataset.
 
 
 
